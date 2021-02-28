@@ -3,6 +3,7 @@
     height: 750px;
     width: 750px;
     /* border: solid 2px; */
+    /* display: none; */
 }
 .container{
     /* border: solid 1px; */
@@ -57,4 +58,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    flex-direction: column;
+}
+.HUD{
+    font-family: "Orbitron";
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    background-color: #D3D3D3;
+    margin: 4px;
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+}
+#prompt{
+    width: 50px;
+}
+#indicator{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #7CFC00;
+    margin: 10px;
 }
