@@ -1,0 +1,35 @@
+.interface{
+    border: solid 2px;
+}
+.circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+.green{
+    background-color: #32CD32;
+}
+.red{
+    background-color: #FF0000;
+}
+.blue{
+    background-color: #0892D0;
+}
+.yellow{
+    background-color: #FFFF00;
+}
+.base{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 225px;
+    width: 225px;
+    background-color: #343434;
+}
+.display{
+    height: 400px;
+    width: 400px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
