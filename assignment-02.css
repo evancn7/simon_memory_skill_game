@@ -33,18 +33,22 @@
 #green{
     background-color: #32CD32;
     opacity: 0.5;
+    cursor: pointer;
 }
 #red{
     background-color: #FF0000;
     opacity: 0.5;
+    cursor: pointer;
 }
 #blue{
     background-color: #0892D0;
     opacity: 0.5;
+    cursor: pointer;
 }
 #yellow{
     background-color: #FFFF00;
     opacity: 0.5;
+    cursor: pointer;
 }
 .base{
     display: flex;
