@@ -22,26 +22,32 @@
     bottom: 0;
     height: 50%;
     width: 50%;
+.left{
+    left: 10%;
 }
 .right{
-    right: 0;
+    right: 10%;
 }
 .circle{
     height: 200px;
     width: 200px;
     border-radius: 50%;
 }
-.green{
+#green{
     background-color: #32CD32;
+    opacity: 0.5;
 }
-.red{
+#red{
     background-color: #FF0000;
+    opacity: 0.5;
 }
-.blue{
+#blue{
     background-color: #0892D0;
+    opacity: 0.5;
 }
-.yellow{
+#yellow{
     background-color: #FFFF00;
+    opacity: 0.5;
 }
 .base{
     display: flex;
