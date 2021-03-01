@@ -13,15 +13,12 @@
 }
 .top{
     position: absolute;
-    top: 0;
-    height: 50%;
-    width: 50%;
+    top: 10%;
 }
 .bottom{
     position: absolute;
-    bottom: 0;
-    height: 50%;
-    width: 50%;
+    bottom: 10%;
+}
 .left{
     left: 10%;
 }
@@ -79,11 +76,12 @@
 }
 #prompt{
     width: 50px;
+    cursor: pointer;
 }
 #indicator{
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: #7CFC00;
+    background-color: #FF0000;
     margin: 10px;
 }
