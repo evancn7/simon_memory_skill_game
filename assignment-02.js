@@ -30,7 +30,7 @@ function start(){
 
 
 function getIndex(){
-    return Math.round(Math.random() * 4);
+    return Math.round(Math.random() * 3);
 }
 
 
