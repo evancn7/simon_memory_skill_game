@@ -86,3 +86,11 @@ function flash(id){
         );
     }
 }
+function check(){
+    if ( series.length != userChoices.length ) return false;
+
+    for (let i = 0, len = userChoices.length; i < len; i++) {
+        if ( userChoices[i] != series[i] ) return false;
+    }
+    return true;
+}
