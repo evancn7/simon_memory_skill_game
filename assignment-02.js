@@ -3,30 +3,34 @@ var lights = ['green', 'red', 'yellow', 'blue'];
 var series = [];
 var userChoices =[];
 
+var userContinues = true;
+
 
 function start(){
 
-    while (true){
+    // turn on game and notify console
+    toggleIndicator();
+    console.log('ha iniciado el juego');
 
-        toggleIndicator();
+    // add random light to pattern, then flash the pattern
+    var randomLight = lights[ getIndex() ];
+    series.push( randomLight );
+    lightShow(series);
 
-        console.log('ha iniciado el juego');
+    // timeout before check is run
+    // user has 5 seconds to input the sequence
+    //start
+    userSequence();
+    setTimeout( check, 5000 );
+    //end
 
-        var randomLight = lights[ getIndex() ];
+    //reset userChoices
 
-        series.push( randomLight );
+    // console.log(userChoices);
 
-        lightShow(series);
-
-        // user input code block
-        // i need to wait for the response and then push to userChoices
-
-        break;
-
-    }
+    // user input code block
+    // i need to wait for the response and then push to userChoices
 }
-
-
 
 
 function getIndex(){
