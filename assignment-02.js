@@ -2,53 +2,37 @@
 var lights = ['green', 'red', 'yellow', 'blue'];
 var series = [];
 var userChoices =[];
-
 var userContinues = true;
+// declare states for flashing lights (opacity)
+var on = "1";
+var off = "0.5";
 
 
 function start(){
-
     // turn on game and notify console
     toggleIndicator();
-    console.log('ha iniciado el juego');
+    console.log('game has started');
 
     // add random light to pattern, then flash the pattern
     var randomLight = lights[ getIndex() ];
     series.push( randomLight );
     lightShow(series);
 
-    // timeout before check is run
     // user has 5 seconds to input the sequence
-    //start
     userSequence();
     setTimeout( check, 5000 );
-    //end
-
-    //reset userChoices
-
-    // console.log(userChoices);
-
-    // user input code block
-    // i need to wait for the response and then push to userChoices
 }
-
 
 function getIndex(){
     return Math.round(Math.random() * 3);
 }
-
 
 function toggleIndicator(){
     var indicator = document.getElementById('indicator');
     indicator.style.backgroundColor = "#7CFC00";
 }
 
-
-
-
-
 function lightShow(series){
-    // an array for testing
     var timeout = 0;
     for (let i = 0, len = series.length; i < len; i++) {
         var timeout = timeout + 1000;
@@ -61,16 +45,6 @@ function lightShow(series){
     }
 }
 
-
-// the flash function
-
-
-// declare the two states of the circle
-var on = "1";
-var off = "0.5";
-
-
-// takes in the id of the element from which it is called using this.id
 function flash(id){
     var circle = document.getElementById(id);
     // if it's on, turn it off
@@ -90,9 +64,11 @@ function flash(id){
         );
     }
 }
-function check(){
-    if ( series.length != userChoices.length ) return false;
 
+function check(){
+    // if not same length definetly wrong
+    if ( series.length != userChoices.length ) return false;
+    // check each item against the pattern
     for (let i = 0, len = userChoices.length; i < len; i++) {
         if ( userChoices[i] != series[i] ) return false;
     }
