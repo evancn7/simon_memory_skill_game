@@ -3,24 +3,18 @@ var lights = ['green', 'red', 'yellow', 'blue'];
 var series = [];
 var userChoices =[];
 var userContinues = true;
+var rounds = 0;
 // declare states for flashing lights (opacity)
 var on = "1";
 var off = "0.5";
 
 
 function start(){
-    // turn on game and notify console
     toggleIndicator();
+
+    // turn on game and notify console
     console.log('game has started');
-
-    // add random light to pattern, then flash the pattern
-    var randomLight = lights[ getIndex() ];
-    series.push( randomLight );
-    lightShow(series);
-
-    // user has 5 seconds to input the sequence
-    userSequence();
-    setTimeout( check, 5000 );
+    playRound();
 }
 
 function getIndex(){
@@ -67,10 +61,38 @@ function flash(id){
 
 function check(){
     // if not same length definetly wrong
-    if ( series.length != userChoices.length ) return false;
+    if ( series.length != userChoices.length ) userContinues = false;
     // check each item against the pattern
     for (let i = 0, len = userChoices.length; i < len; i++) {
-        if ( userChoices[i] != series[i] ) return false;
+        if ( userChoices[i] != series[i] ) userContinues = false;
     }
-    return true;
+}
+
+function add(light){
+    userChoices.push(light)
+}
+
+function playRound(){
+    rounds++;
+    document.getElementById('lastScore').innerHTML = rounds;
+    // reset the user inputs
+    userChoices = [];
+
+    // add random light to pattern, then flash the pattern
+    // IMPORTANT - THIS PROCESS TAKES SOME OF THE TIME FROM THE USER
+    var randomLight = lights[ getIndex() ];
+    series.push( randomLight );
+    lightShow(series);
+
+    setTimeout(
+        () => {
+            check(),
+            console.log("check")
+        },
+        5000);
+
+    setTimeout( () => {
+        if ( userContinues ) playRound();
+        else console.log('game over')
+    }, 6000);
 }
