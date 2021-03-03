@@ -4,6 +4,7 @@ var series = [];
 var userChoices =[];
 var userContinues = true;
 var rounds = 0;
+var timer = 5000;
 // declare states for flashing lights (opacity)
 var on = "1";
 var off = "0.5";
@@ -29,7 +30,7 @@ function toggleIndicator(){
 function lightShow(series){
     var timeout = 0;
     for (let i = 0, len = series.length; i < len; i++) {
-        var timeout = timeout + 1000;
+        var timeout = timeout + 800;
         setTimeout(
             function(){
                 flash(series[i]);
@@ -74,6 +75,7 @@ function add(light){
 
 function playRound(){
     rounds++;
+    timer = timer + (series.length * 1000)
     document.getElementById('lastScore').innerHTML = rounds;
     // reset the user inputs
     userChoices = [];
@@ -89,10 +91,12 @@ function playRound(){
             check(),
             console.log("check")
         },
-        5000);
+        timer);
 
     setTimeout( () => {
         if ( userContinues ) playRound();
-        else console.log('game over')
-    }, 6000);
+    }, timer + 100);
+
+    // reset the timer
+    timer = 5000;
 }
