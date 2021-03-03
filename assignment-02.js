@@ -95,6 +95,10 @@ function playRound(){
 
     setTimeout( () => {
         if ( userContinues ) playRound();
+        else {
+            console.log('game over');
+            endGameSequence();
+        }
     }, timer + 100);
 
     // reset the timer
