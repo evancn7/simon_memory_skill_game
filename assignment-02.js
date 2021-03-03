@@ -114,4 +114,40 @@ function playRound(){
     // reset the timer
     timer = 5000;
 }
+
+function endGameSequence(){
+    // firstly clear the array data
+    series = [];
+    userChoices = [];
+
+    // then allow user to play again
+    userContinues = true;
+
+    // reset the timer and rounds
+    timer = 5000;
+
+    /* then add the score to 'lastScore'
+    and if rounds tops last high score then update it,
+    reset rounds after */
+    document.getElementById('lastScore').innerHTML = rounds;
+
+    if (rounds > highScore) {
+        document.getElementById('highScore').innerHTML = rounds;
+    }
+
+    rounds = 0;
+
+    flashTimer = 0;
+    for (let i = 0; i < 5; i++) {
+        flashTimer = flashTimer + 350;
+        setTimeout(() => {
+            flash(lights[0]);
+            flash(lights[1]);
+            flash(lights[2]);
+            flash(lights[3]);
+        },
+        flashTimer
+    )};
+
     toggleIndicator();
+}
