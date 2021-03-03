@@ -1,10 +1,12 @@
-// global variables
+// global variables for gameplay
 var lights = ['green', 'red', 'yellow', 'blue'];
 var series = [];
 var userChoices =[];
 var userContinues = true;
+var highScore = 0;
 var rounds = 0;
 var timer = 5000;
+
 // declare states for flashing lights (opacity)
 var on = "1";
 var off = "0.5";
@@ -16,7 +18,8 @@ function start(){
 
     // turn on game and notify console
     console.log('game has started');
-    playRound();
+
+    setTimeout(playRound, 3000);
 }
 
 function getIndex(){
