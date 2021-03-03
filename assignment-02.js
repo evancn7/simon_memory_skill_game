@@ -8,6 +8,7 @@ var timer = 5000;
 // declare states for flashing lights (opacity)
 var on = "1";
 var off = "0.5";
+var turnedOn = false;
 
 
 function start(){
@@ -24,7 +25,14 @@ function getIndex(){
 
 function toggleIndicator(){
     var indicator = document.getElementById('indicator');
-    indicator.style.backgroundColor = "#7CFC00";
+    if (!turnedOn) {
+        indicator.style.backgroundColor = "#7CFC00";
+        turnedOn = true;
+    }
+    else {
+        indicator.style.backgroundColor = "#FF0000";
+        turnedOn = false;
+    }
 }
 
 function lightShow(series){
@@ -89,6 +97,8 @@ function playRound(){
     setTimeout(
         () => {
             check(),
+
+
             console.log("check")
         },
         timer);
@@ -104,3 +114,4 @@ function playRound(){
     // reset the timer
     timer = 5000;
 }
+    toggleIndicator();
