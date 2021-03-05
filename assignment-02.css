@@ -2,11 +2,8 @@
     position: absolute;
     height: 750px;
     width: 750px;
-    /* border: solid 2px; */
-    /* display: none; */
 }
 .container{
-    /* border: solid 1px; */
     display: flex;
     justify-content: center;
     align-items: center;
