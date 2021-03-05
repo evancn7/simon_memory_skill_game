@@ -134,8 +134,9 @@ function endGameSequence(){
     reset rounds after */
     document.getElementById('lastScore').innerHTML = rounds;
 
-    if (rounds > highScore) {
-        document.getElementById('highScore').innerHTML = rounds;
+    if (score > highScore) {
+        highScore = score;
+        document.getElementById('highScore').innerHTML = highScore;
     }
 
     rounds = 0;
