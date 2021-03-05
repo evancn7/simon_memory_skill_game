@@ -1,88 +1,88 @@
-.interface{
-    position: absolute;
-    height: 750px;
-    width: 750px;
+.interface {
+  position: absolute;
+  height: 750px;
+  width: 750px;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.top{
-    position: absolute;
-    top: 10%;
+.top {
+  position: absolute;
+  top: 10%;
 }
-.bottom{
-    position: absolute;
-    bottom: 10%;
+.bottom {
+  position: absolute;
+  bottom: 10%;
 }
-.left{
-    left: 10%;
+.left {
+  left: 10%;
 }
-.right{
-    right: 10%;
+.right {
+  right: 10%;
 }
-.circle{
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
-#green{
-    background-color: #32CD32;
-    opacity: 0.5;
-    cursor: pointer;
+#green {
+  background-color: #32cd32;
+  opacity: 0.5;
+  cursor: pointer;
 }
-#red{
-    background-color: #FF0000;
-    opacity: 0.5;
-    cursor: pointer;
+#red {
+  background-color: #ff0000;
+  opacity: 0.5;
+  cursor: pointer;
 }
-#blue{
-    background-color: #0892D0;
-    opacity: 0.5;
-    cursor: pointer;
+#blue {
+  background-color: #0892d0;
+  opacity: 0.5;
+  cursor: pointer;
 }
-#yellow{
-    background-color: #FFFF00;
-    opacity: 0.5;
-    cursor: pointer;
+#yellow {
+  background-color: #ffff00;
+  opacity: 0.5;
+  cursor: pointer;
 }
-.base{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 225px;
-    width: 225px;
-    background-color: #343434;
+.base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 225px;
+  width: 225px;
+  background-color: #343434;
 }
-.display{
-    height: 400px;
-    width: 400px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
+.display {
+  height: 400px;
+  width: 400px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
 }
-.HUD{
-    font-family: "Orbitron";
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 5px 10px 5px 10px;
-    background-color: #D3D3D3;
-    margin: 4px;
-    display: inline-block;
-    width: 25px;
-    text-align: center;
+.HUD {
+  font-family: "Orbitron";
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  background-color: #d3d3d3;
+  margin: 4px;
+  display: inline-block;
+  width: 25px;
+  text-align: center;
 }
-#prompt{
-    width: 50px;
-    cursor: pointer;
+#prompt {
+  width: 50px;
+  cursor: pointer;
 }
-#indicator{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: #FF0000;
-    margin: 10px;
+#indicator {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  margin: 10px;
 }
