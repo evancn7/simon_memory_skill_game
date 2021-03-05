@@ -19,6 +19,7 @@ var alive = true; // is the user alive to continue??
 var highScore = 0;
 var score = 0;
 var timer = 5000;
+var interval = 600; // interval for the lightShow function
 
 // declare states for flashing lights (opacity)
 var on = "1";
@@ -36,12 +37,17 @@ function start() {
 }
 
 function playRound() {
-    // new round, increment it
+    // new score (round), increment it
     score++;
     /* add timer and add 1 second for each light, this is added to the timeout
     for check below as before the flashing lights used up the round time as the
     lights take time to flash */
-    timer = timer + (series.length * 1000)
+
+    if (score == 5) interval = (interval * 0.8); // shorten the interval by 20%
+    if (score == 9) interval = (interval * 0.8); // shorten the interval by 20%
+    if (score == 13) interval = (interval * 0.8); // shorten the interval by 20%
+
+    timer = timer + (series.length * interval)
     document.getElementById('lastScore').innerHTML = score;
 
     // reset the user inputs for this round
@@ -53,7 +59,7 @@ function playRound() {
     var randomLight = lights[getIndex()];
     series.push(randomLight);
     // call the lightShow method to flash the series
-    lightShow(series);
+    lightShow(series, interval);
 
     // check the user input (userChoices) against the series after the round times out
     setTimeout(
@@ -65,10 +71,7 @@ function playRound() {
 
     setTimeout(() => {
         if (alive) playRound();
-        else {
-            console.log('game over');
-            endGameSequence();
-        }
+        else endGameSequence();
     }, timer + 100);
 
     // reset the timer
@@ -76,6 +79,7 @@ function playRound() {
 }
 
 function endGameSequence() {
+    console.log('game over');
     // firstly clear the array data
     series = [];
     userChoices = [];
@@ -155,16 +159,16 @@ function flash(id) {
             function () {
                 flash(id);
             },
-            200
+            100
         );
     }
 }
 
-function lightShow(series) {
+function lightShow(series, interval) {
     var timeout = 0;
     // flash each light in the series for the user
     for (let i = 0, len = series.length; i < len; i++) {
-        var timeout = timeout + 800;
+        var timeout = timeout + interval;
         setTimeout(
             function () {
                 flash(series[i]);
