@@ -7,75 +7,73 @@ OS: Linux
 
 <html lang="en" dir="ltr">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <link rel="shortcut icon" href="#" />
-        <link rel="stylesheet" href="assignment-02.css">
-        <script type="text/javascript" src="assignment-02.js"></script>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');</style>
-        <title>Assignment 2</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="assignment-02.css">
+    <script type="text/javascript" src="assignment-02.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    </style>
+    <title>Assignment 2</title>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="interface">
+    <div class="interface">
 
-            <div class="circle base display">
+        <div class="circle base display">
 
-                <div>
+            <div>
 
-                    <div class="HUD" id="highScore">00</div>
-                    <div
-                    class="HUD"
-                    id="prompt"
-                    onClick="start();"
-                    >
-                        start
-                    </div>
-                    <div class="HUD" id="lastScore">00</div>
-
+                <div class="HUD" id="highScore">00</div>
+                <div class="HUD" id="prompt" onClick="start();">
+                    start
                 </div>
-
-                <div id="indicator"></div>
+                <div class="HUD" id="lastScore">00</div>
 
             </div>
 
-            <div class="container top left">
+            <div id="indicator"></div>
 
-                <div class="circle base">
-                    <div class="circle" id="green" onclick="add(this.id)"></div>
-                </div>
+        </div>
 
-            </div>
+        <div class="container top left">
 
-            <div class="container top right">
-
-                <div class="circle base">
-                    <div class="circle" id="red" onclick="add(this.id)"></div>
-                </div>
-
-            </div>
-
-            <div class="container bottom left">
-
-                <div class="circle base">
-                    <div class="circle" id="yellow" onclick="add(this.id)"></div>
-                </div>
-
-            </div>
-
-            <div class="container bottom right">
-
-                <div class="circle base">
-                    <div class="circle" id="blue" onclick="add(this.id)"></div>
-                </div>
-
+            <div class="circle base">
+                <div class="circle" id="green" onclick="add(this.id);flash(this.id)"></div>
             </div>
 
         </div>
 
-    </body>
+        <div class="container top right">
+
+            <div class="circle base">
+                <div class="circle" id="red" onclick="add(this.id);flash(this.id)"></div>
+            </div>
+
+        </div>
+
+        <div class="container bottom left">
+
+            <div class="circle base">
+                <div class="circle" id="yellow" onclick="add(this.id);flash(this.id)"></div>
+            </div>
+
+        </div>
+
+        <div class="container bottom right">
+
+            <div class="circle base">
+                <div class="circle" id="blue" onclick="add(this.id);flash(this.id)"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
 
 </html>
